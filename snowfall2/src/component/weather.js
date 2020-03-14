@@ -1,22 +1,22 @@
 import React from "react";
-
-const Weather = () => {
+//creating UI and setting the values dynamically through props
+const Weather = (props) => {
     return (
         <div className="container">
             <div className="cards">
-                <h1> SnowFall2</h1>
+                <h1> {props.city}</h1>
                 <h5 className="py-4">
-                    <i class="wi wi-day-sunny display-1"></i>
+                    <i className={`wi${props.weatherIcon}`}></i>
                 </h5>
-                <h1 clasName="py-2">25&deg;</h1>
+                <h1 className="py-2">{props.temp_fahrenheit}&deg;</h1>
                 {/* show max/min temp */}
-                {minmaxTemp(24, 19)}
-                <h4 className="py-3">slow rain</h4>
+                {minmaxTemp(props.temp_min, props.temp_max)}
+                <h4 className="py-3">{props.description} </h4>
             </div>
         </div>
     );
 };
-
+//setting the max and min degrees of the weather 
 function minmaxTemp(min, max) {
     return (
         <h3>
