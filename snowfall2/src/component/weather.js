@@ -2,7 +2,7 @@ import React from "react";
 //creating UI and setting the values dynamically through props
 const Weather = (props) => {
     return (
-        <div className="container">
+        <div className="container text-light">
             <div className="cards">
                 <h1> {props.city}</h1>
                 <h5 className="py-4">
